@@ -1,0 +1,71 @@
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	display: flex;
+}
+
+.wide-col {
+	display: flex;
+	width: 65%;
+	height: 100%;
+}
+
+.narrow-col {
+	width: 35%;
+	height: 100%;
+}
+/*In the box there are 3 divs and the calc make the height divide by 3 for them to share*/
+.box {
+	width: 100%;
+	height: calc(100%/3);
+}
+
+.blue {background-color: #0D11A8;}
+.red {background-color: #F50F0F;}
+.yellow {background-color: #FAE317;}
+
+
+/* https://philipwalton.github.io/solved-by-flexbox/demos/vertical-centering/ */
+/* If you're using 'display: flex' this class can be used to easily center horizontally! */
+.center-horizontal {
+	align-items: center;	
+}
+
+/* If you're using 'display: flex' this class can be used to easily center vertically! */
+.center-vertical {
+	justify-content: center;
+}
+
+/* Keep your image from overflowing it's parent DIV */
+.contain-image {
+	max-height: 75%;
+	max-width: 75%;
+}
+/*the is the breakpoint and makes it when you hit 900px the layout would change from looking like a desktop to a mobile, make the right side div turn into blocks and adds gifs in each box*/
+@media only screen and (max-width: 900px) {
+	 body { 
+		display:block;
+	 }
+
+	.wide-col {
+		display: flex;
+		width: 100%;
+		height: 70%;
+	}
+
+	.narrow-col {
+		width: 100%;
+		height: calc(100%/3);
+		display:block;
+	}
+
+	.box {
+		width: 100%;
+		height: 100%;
+	}
+	/*this makes the gif appear in the box, this specific code only works on gif */
+	.gif {
+	content: url("images/kittyloaf.gif");
+	}
+}
